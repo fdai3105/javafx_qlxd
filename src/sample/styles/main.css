@@ -1,0 +1,246 @@
+ToolBar {
+    -fx-background-color: #bdc3c7;
+}
+
+TableView {
+    -fx-background-image: url("../medias/back.png");
+    -fx-background-position: center center;
+    -fx-background-size: contain;
+    -fx-background-repeat: stretch;
+}
+
+Button, ComboBox {
+    -fx-background-color: #dcdde1;
+}
+
+Button:hover {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #f5fbff;
+}
+
+#mnithemnv > .label {
+    -fx-graphic: url("../medias/themnv.png");
+}
+
+#mnithemnv > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mnithemkh > .label {
+    -fx-graphic: url("../medias/themkh.png");
+}
+
+#mnithemkh > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mnithemdm > .label {
+    -fx-graphic: url("../medias/themdm.png");
+}
+
+#mnithemdm > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mnithemhang > .label {
+    -fx-graphic: url("../medias/themhang.png");
+}
+
+#mnithemhang > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mnithemhd > .label {
+    -fx-graphic: url("../medias/themhd.png");
+}
+
+#mnithemhd > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mnithemncc > .label {
+    -fx-graphic: url("../medias/themncc.png");
+}
+
+#mnithemncc > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#mniexit > .label {
+    -fx-graphic: url("../medias/exit.png");
+}
+
+#mniexit > .accelerator-text {
+    -fx-graphic: none;
+}
+
+#btmodl {
+    -fx-graphic: url("../medias/open32.png");
+}
+
+#btluudl {
+    -fx-graphic: url("../medias/save32.png");
+}
+
+#bttaomoidl {
+    -fx-graphic: url("../medias/new32.png");
+}
+
+#btthemnhacc {
+    -fx-graphic: url("../medias/themncc32.png");
+}
+
+#btthemdm {
+    -fx-graphic: url("../medias/themdm32.png");
+}
+
+#btthemhang {
+    -fx-graphic: url("../medias/themhang32.png");
+}
+
+#btthemnhanvien {
+    -fx-graphic: url("../medias/themnv32.png");
+}
+
+#btthemkhachang {
+    -fx-graphic: url("../medias/themkh32.png");
+}
+
+#btthemdonhang {
+    -fx-graphic: url("../medias/themhd32.png");
+}
+
+ToolBar .lbseparator {
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-font-weight: bold;
+    -fx-padding: 0px 10px 0px 10px;
+
+}
+
+#bttimkiem, #btlamlai {
+    -fx-font-weight: bold;
+}
+
+.chucnangtimkiem {
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-min-width: 130px;
+    -fx-max-width: 130px;
+}
+
+.chucnangtimkiemLB {
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+}
+
+.chucnangtimkiem2 {
+    -fx-min-height: 40px;
+    -fx-min-width: 80px;
+    -fx-max-width: 80px;
+    -fx-max-height: 40px;
+}
+.chucnangtimkiemBT{
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+}
+
+#tfgiafrom, #tfgiato {
+    -fx-max-width: 108px;
+    -fx-min-width: 57px;
+}
+
+#bttimkiem {
+    -fx-graphic: url("../medias/search.png");
+}
+
+#btlamlai {
+    -fx-graphic: url("../medias/clear.png");
+}
+
+#tftimkiem {
+    -fx-min-width: 400px;
+    -fx-max-width: 400px;
+    -fx-pref-width: 400px;
+}
+
+.mnisua > .label {
+    -fx-graphic: url("../medias/edit.png");
+    -fx-font-weight: bold;
+}
+
+.mnisua > .accelerator-text {
+    -fx-graphic: none;
+}
+
+.mnixoa > .label {
+    -fx-graphic: url("../medias/delete.png");
+}
+
+.mnixoa > .accelerator-text {
+    -fx-graphic: none;
+}
+
+.mnithemvaogiohang > .label {
+    -fx-graphic: url("../medias/add2cart.png");
+}
+
+.mnithemvaogiohang > .accelerator-text {
+    -fx-graphic: none;
+}
+
+.mnithaydoisoluonghang > .label {
+    -fx-graphic: url("../medias/thaydoisoluong.png");
+    -fx-font-weight: bold;
+}
+
+.mnithaydoisoluonghang > .accelerator-text {
+    -fx-graphic: none;
+}
+
+.mniloaibokhoigiohang > .label {
+    -fx-graphic: url("../medias/loaikhoigiohang.png");
+}
+
+.mniloaibokhoigiohang > .accelerator-text {
+    -fx-graphic: none;
+}
+
+.mniin > .label {
+    -fx-graphic: url("../medias/print.png");
+}
+
+.mniin > .accelerator-text {
+    -fx-graphic: none;
+}
+
+/*-------------------------------------------------------------*/
+.gpAll {
+    -fx-background-color: #758a8b !important;
+    -fx-pref-height: 40px;
+    -fx-pref-width: 200px;
+    -fx-font-size: 18px;
+}
+
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-width: 0, 0;
+}
+
+.tab-label {
+    -fx-text-fill: #f5f6f7 !important;
+}
+
+.gpAll:selected {
+    -fx-background-color: #00C5A3 !important;
+    -fx-pref-height: 45px !important;
+}
+
+.tab:selected .tab-label {
+    -fx-text-fill: #f5fbff !important;
+}
+
+.table-view {
+    -fx-background-color: #2d3436 !important;
+    -fx-font-size: 19px !important;
+    -fx-font-weight: inherit;
+}

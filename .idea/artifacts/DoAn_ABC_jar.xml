@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DoAn-ABC:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DoAn_ABC_jar</output-path>
+    <root id="archive" name="DoAn-ABC.jar">
+      <element id="module-output" name="DoAn-ABC" />
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>

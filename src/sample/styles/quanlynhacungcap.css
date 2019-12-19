@@ -1,0 +1,104 @@
+VBox {
+    -fx-background-color: #2d3436;
+}
+VBox HBox Label{
+    -fx-min-width:130px;
+    -fx-max-width:130px;
+    -fx-letter-spacing:10px;
+
+    -fx-font-size: 18px;
+    -fx-text-fill: #dfe6e9;
+}
+
+VBox HBox TextField{
+    -fx-min-width:300px;
+    -fx-max-width:300px;
+}
+
+VBox HBox ComboBox{
+    -fx-min-width:300px;
+    -fx-max-width:300px;
+}
+
+.nutchucnang Button{
+    -fx-min-width:97px;
+    -fx-max-width:97px;
+    -fx-min-height:40px;
+    -fx-max-height:40px;
+    -fx-font-weight:bold;
+}
+
+.nutchucnang{
+    -fx-padding:20px 0px 5px 0px;
+}
+
+VBox{
+    -fx-padding: 10px 10px;
+    -fx-border:0px 1px 1px 1px;
+    -fx-border-color: lightgray;
+}
+
+.tieude{
+    -fx-text-transform: capitalize;
+    -fx-font-family: SansSerif;
+    -fx-font-weight:bold;
+    -fx-text-fill: #dfe6e9;
+    -fx-font-size:20px;
+    -fx-text-alignment: center;
+    -fx-min-width:inherit !important;
+    -fx-max-width:inherit !important;
+}
+
+ImageView{
+    -fx-image:url("../medias/placeholder.png");
+    -fx-cursor: hand;
+}
+/*----------------------------------------------*/
+#imvbieutuong {
+    -fx-max-height: 100px;
+    -fx-min-height: 100px;
+}
+.bt-all{
+    -fx-background-color: #54585e;
+    -fx-text-fill: #dfe6e9;
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 7 0 7 0;
+    -fx-pref-height: 28px;
+    -fx-pref-width: 200px;
+}
+.bt-all:hover {
+    -fx-background-color: #00C5A3;
+    -fx-text-fill: #D3FBD8;
+}
+.tfAll {
+    -fx-fill: none !important;
+    -fx-background-color: transparent !important;
+    -fx-border-style: solid;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-border-color: grey;
+    -fx-text-fill: #dfe6e9;
+}
+.tfAll:focused {
+    -fx-border-width: 0 2px 1px 0;
+    -fx-border-color: #00d8d6;
+
+}
+.combo-box {
+    -fx-background-color: #54585e;
+}
+.list-cell  {
+    -fx-background-color: #54585e;
+    -fx-text-fill: #dfe6e9 !important;
+}
+.list-cell:hover {
+    -fx-background-color: #00C5A3;
+}
+.btMini {
+    -fx-background-color: #54585e;
+    -fx-text-fill: #dfe6e9;
+}
+.btMini:hover {
+    -fx-background-color: #00C5A3;
+    -fx-text-fill: #D3FBD8;
+}

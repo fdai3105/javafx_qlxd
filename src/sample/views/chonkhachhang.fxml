@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.ChonKhachHang"
+      prefHeight="400.0" prefWidth="600.0" spacing="10">
+    <HBox alignment="TOP_CENTER">
+        <Label text="DANH SÁCH KHÁCH HÀNG" styleClass="tieude"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Nhập Từ khóa:"/>
+        <TextField fx:id="tftukhoa" styleClass="tfAll" onKeyReleased="#tftukhoaPressed"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Nhấp đôi chuột&#xD;để chọn "/>
+        <ListView fx:id="lvketqua" onMouseClicked="#lvketquaDblClick"/>
+    </HBox>
+
+    <HBox styleClass="nutchucnang" spacing="5" alignment="CENTER_RIGHT">
+        <Button text="Thêm Mới" styleClass="bt-all" onAction="#btthemmoiClick"/>
+        <Button text="Hoàn Tất" styleClass="bt-all" onMouseClicked="#bthoantatClick"/>
+    </HBox>
+</VBox>

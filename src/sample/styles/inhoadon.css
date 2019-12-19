@@ -1,0 +1,11 @@
+.nutchucnang Button{
+    -fx-min-width:120px;
+    -fx-max-width:120px;
+    -fx-min-height:40px;
+    -fx-max-height:40px;
+    -fx-font-weight:bold;
+}
+
+.nutchucnang{
+    -fx-padding:20px 0px 10px 0px;
+}

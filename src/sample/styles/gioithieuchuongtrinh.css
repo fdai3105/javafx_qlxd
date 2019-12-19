@@ -1,0 +1,11 @@
+Button{
+    -fx-min-width:97px;
+    -fx-max-width:97px;
+    -fx-min-height:40px;
+    -fx-max-height:40px;
+    -fx-font-weight:bold;
+}
+
+VBox{
+    -fx-padding:10px 10px;
+}

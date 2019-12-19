@@ -1,0 +1,266 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.canvas.Canvas?>
+<BorderPane fx:controller="sample.controllers.Controller"
+            xmlns:fx="http://javafx.com/fxml" onMouseEntered="#capNhatLaiDuLieu">
+    <top>
+        <VBox>
+            <MenuBar><!--For menus-->
+                <Menu text="Tác Vụ">
+                    <MenuItem text="Thêm Mới Hàng" id="mnithemhang" fx:id="mnithemhang" onAction="#mnithemhangClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="H" shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Thêm Danh Mục" id="mnithemdm" onAction="#btthemdmClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="M"
+                                                shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Thêm Nhà Cung Cấp" id="mnithemncc" onAction="#btthemnhaccClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="C" shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Thêm Nhân Viên" id="mnithemnv" fx:id="mnithemnv" onAction="#btthemnhanvienClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="N"
+                                                shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <MenuItem text="Thêm Mới Khách Hàng" id="mnithemkh" onAction="#btthemkhachhangClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="K" shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Tạo Hóa Đơn Mua Hàng" id="mnithemhd" onAction="#mnithemhdClick">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="H" shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Đăng Xuất" id="mniexit" fx:id="mnidangxuat" onAction="#btthoat">
+                        <accelerator>
+                            <KeyCodeCombination alt="UP" control="DOWN" shift="UP" meta="UP" code="F4" shortcut="DOWN"/>
+                        </accelerator>
+                    </MenuItem>
+                </Menu>
+                <Menu text="Thông Tin">
+                    <MenuItem text="Phiên Bản" onAction="#mnithongtinClick"/>
+                </Menu>
+            </MenuBar>
+            <ToolBar><!--For Toolbar-->
+                <HBox spacing="4">
+                    <Button fx:id="btmodl" id="btmodl" onAction="#btmodlClick">
+                        <tooltip>
+                            <Tooltip text="Mở Dữ Liệu"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btluudl" id="btluudl" onAction="#btluudlClick">
+                        <tooltip>
+                            <Tooltip text="Lưu Dữ Liệu"/>
+                        </tooltip>
+                    </Button>
+                    <Label text="THÊM:" styleClass="lbseparator"/>
+                    <Button fx:id="btthemhang" id="btthemhang" onAction="#btthemhangClick">
+                        <tooltip>
+                            <Tooltip text="Thêm Mới Hàng"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btthemdm" id="btthemdm" onAction="#btthemdmClick">
+                        <tooltip>
+                            <Tooltip text="Thêm Danh Mục"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btthemnhacc" id="btthemnhacc" onAction="#btthemnhaccClick">
+                        <tooltip>
+                            <Tooltip text="Thêm Nhà Cung Cấp"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btthemnhanvien" id="btthemnhanvien" onAction="#btthemnhanvienClick">
+                        <tooltip>
+                            <Tooltip text="Thêm Mới Nhân Viên"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btthemkhachang" id="btthemkhachang" onAction="#btthemkhachhangClick">
+                        <tooltip>
+                            <Tooltip text="Thêm Thông Tin Khách Hàng"/>
+                        </tooltip>
+                    </Button>
+                    <Button fx:id="btthemdonhang" id="btthemdonhang" onAction="#btthemmoidonhangClick" text="Mua Hàng">
+                        <tooltip>
+                            <Tooltip text="Tạo Hóa Đơn Mua Hàng"/>
+                        </tooltip>
+                    </Button>
+                    <Label text="TÌM KIẾM:" styleClass="lbseparator"/>
+                    <Label text="Giá từ: " styleClass="chucnangtimkiemLB"/>
+                    <TextField fx:id="tfgiatu" styleClass="chucnangtimkiem" id="tfgiafrom"/>
+                    <Label text=", đến: " styleClass="chucnangtimkiemLB"/>
+                    <TextField fx:id="tfgiaden" styleClass="chucnangtimkiem" id="tfgiato"/>
+                    <Label text=" Từ khóa: "  style="-fx-font-weight: bold" styleClass="chucnangtimkiemLB"/>
+                    <TextField fx:id="tftukhoa" styleClass="chucnangtimkiem2"/>
+                    <ComboBox promptText="Nhà Cung Cấp" style="-fx-pref-width: 170" styleClass="chucnangtimkiem"
+                              fx:id="cbncc"/>
+                    <ComboBox promptText="Thuộc Danh Mục" style="-fx-pref-width: 166" styleClass="chucnangtimkiem"
+                              fx:id="cbdm"/>
+                    <Button text="Tìm Kiếm" id="bttimkiem" styleClass="chucnangtimkiemBT" onAction="#bttimkiemClick"/>
+                    <Button text="Làm Lại" id="btlamlai" styleClass="chucnangtimkiemBT" onAction="#btlamlaiClick"/>
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <TabPane fx:id="tabpane" styleClass="tbpaneCenter" id="tpstyle">
+            <Tab text="Hàng Hóa" styleClass="gpAll" closable="false" id="tabHH" fx:id="tabhanghoa">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/hthang.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_data" id="tbv_data" onMouseClicked="#tbv_dataDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Sửa Thông Tin Hàng Được Chọn" styleClass="mnisua"
+                                              onAction="#tbv_dataSua"/>
+                                    <MenuItem text="Thêm Hàng Được Chọn Vào Giỏ Hàng" styleClass="mnithemvaogiohang"
+                                              onAction="#mnithemvaogiohangClick"/>
+                                    <MenuItem text="Xóa Hàng Được Chọn" styleClass="mnixoa"
+                                              onAction="#mnixoahanghoaClick"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Danh Mục" styleClass="gpAll" closable="false">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/htdm.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_dm" id="tbv_dm" onMouseClicked="#tbv_danhmucDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Sửa Danh Mục Được Chọn" styleClass="mnisua"
+                                              onAction="#mnisuadanhmucCLick"/>
+                                    <MenuItem text="Xóa Danh Mục Được Chọn" styleClass="mnixoa"
+                                              onAction="#mnixoadanhmucClick"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Nhà Cung Cấp" styleClass="gpAll" closable="false">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/htncc.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_ncc" id="tbv_ncc" onMouseClicked="#tbv_nccDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Sửa Thông Tin Hàng Được Chọn" styleClass="mnisua"
+                                              onAction="#mnisuanhaccClick"/>
+                                    <MenuItem text="Xóa Hàng Được Chọn" styleClass="mnixoa" onAction="#mnixoanccClick"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Nhân Viên" styleClass="gpAll" closable="false" fx:id="tabnhanvien">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/htnv.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_nhanvien" onMouseClicked="#tbv_nhanvienDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Sửa Thông Tin Nhân Viên" styleClass="mnisua" onAction="#mnisuanv"/>
+                                    <MenuItem text="Xóa Nhân Viên Được Chọn" styleClass="mnixoa" onAction="#mnixoanv"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Khách Hàng" styleClass="gpAll" closable="false">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/htkh.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_khachhang" onMouseClicked="#tbv_khachhangDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Sửa Thông Tin Khách Hàng" styleClass="mnisua" onAction="#mnisuakh"/>
+                                    <MenuItem text="Xóa Khách Hàng Được Chọn" styleClass="mnixoa" onAction="#mnixoakh"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Giỏ Hàng" styleClass="gpAll" closable="false" fx:id="tabgiohang">
+                <graphic>
+                    <ImageView fitWidth="30" fitHeight="30">
+                        <Image url="@../medias/cart.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_cart" onMouseClicked="#tbv_cartDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="Thay Đổi Số Lượng Hàng" styleClass="mnithaydoisoluonghang"
+                                              onAction="#mnithaydoisoluonghangClick"/>
+                                    <MenuItem text="Loại Bỏ Khỏi Giỏ Hàng" styleClass="mniloaibokhoigiohang"
+                                              onAction="#mnixoagiohangClick"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+            <Tab text="Hóa Đơn" styleClass="gpAll" closable="false" fx:id="tabhoadon">
+                <graphic>
+                    <ImageView fitWidth="20" fitHeight="20">
+                        <Image url="@../medias/hthd.png"/>
+                    </ImageView>
+                </graphic>
+                <content>
+                    <TableView fx:id="tbv_hoadon" onMouseClicked="#tbv_hoadonDblClick">
+                        <contextMenu>
+                            <ContextMenu>
+                                <items>
+                                    <MenuItem text="In Hóa Đơn Được Chọn" styleClass="mniin" onAction="#mniinClick"/>
+                                    <MenuItem text="Xóa Hóa Đơn Được Chọn" styleClass="mnixoa"
+                                              onAction="#mnixoahoadonClick"/>
+                                </items>
+                            </ContextMenu>
+                        </contextMenu>
+                    </TableView>
+                </content>
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

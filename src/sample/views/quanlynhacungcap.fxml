@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.QuanLyNhaCungCapController"
+      prefHeight="400.0" prefWidth="600.0" spacing="10" id="QLNCC">
+    <HBox alignment="TOP_CENTER">
+        <Label text="QUẢN LÝ NHÀ CUNG CẤP" styleClass="tieude"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Nhà Cung Cấp:" wrapText="true"/>
+        <TextField fx:id="tftenncc" styleClass="tfAll"/>
+    </HBox>
+    <HBox spacing="5" onMouseEntered="#loadCountries">
+        <Label text="Quốc Gia:"/>
+        <ComboBox fx:id="cbquocgia" styleClass="cbAll" promptText="Chọn Quốc Gia"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Biểu Tượng:&#xD;(100x100px)"/>
+        <ImageView fx:id="imvbieutuong" id="imvbieutuong" onMouseClicked="#imvbieutuongClick"
+                   onMouseEntered="#imvbieutuongMouseEntered"/>
+    </HBox>
+    <HBox styleClass="nutchucnang" spacing="14" alignment="BOTTOM_CENTER">
+        <Button text="Thêm Mới" styleClass="bt-all" onAction="#btthemmoinccClick"/>
+        <Button text="Cập Nhật" styleClass="bt-all" fx:id="btcapnhat" onAction="#btcapnhatClick"/>
+        <Button text="Xóa" styleClass="bt-all" fx:id="btxoa" onAction="#btxoaClick"/>
+        <Button text="Hủy" styleClass="bt-all" fx:id="bthuy" onAction="#bthuyClick"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.QuanLyHangHoaController"
+      prefHeight="400.0" prefWidth="600.0" spacing="10" id="QLHH">
+    <HBox alignment="TOP_CENTER">
+        <Label text="QUẢN LÝ HÀNG HÓA" styleClass="tieude"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Tên Hàng:"/>
+        <TextField styleClass="tfAll" fx:id="tften_hh"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Số lượng:"/>
+        <TextField styleClass="tfAll" fx:id="tfsoluong_hh"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Đơn giá:"/>
+        <TextField styleClass="tfAll" fx:id="tfgiatien_hh"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Mô tả:"/>
+        <TextArea fx:id="txtmota_hh" style="-fx-wrap-text: true"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Hình ảnh:&#xD;(100x100px)"/>
+        <ImageView fx:id="imvhanghoa" id="imvbieutuong" onMouseClicked="#imvhanghoaClick"
+                   onMouseEntered="#imvhanghoaMouseEntered"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Đánh giá:"/>
+        <TextField styleClass="tfAll" fx:id="tfdanhgia_hh"/>
+    </HBox>
+    <HBox spacing="5" onMouseEntered="#lietKeDM">
+        <Label text="Danh Mục:"/>
+        <ComboBox promptText="Chọn Danh Mục" styleClass="cbAll" fx:id="cbdanhmuc_hh"/>
+        <Button text="+" styleClass="btMini" onAction="#btthemdanhmuc">
+            <tooltip>
+                <Tooltip text="Thêm Mới Danh Mục"/>
+            </tooltip>
+        </Button>
+    </HBox>
+    <HBox spacing="5" onMouseEntered="#lietKeNCC">
+        <Label text="Nhà Cung Cấp:"/>
+        <ComboBox promptText="Chọn Nhà Cung Cấp" styleClass="cbAll" fx:id="cbnhacc_hh"/>
+        <Button text="+" styleClass="btMini"  onAction="#btthemnhacc">
+            <tooltip>
+                <Tooltip text="Thêm Mới Nhà Cung Cấp"/>
+            </tooltip>
+        </Button>
+    </HBox>
+    <HBox spacing="14" styleClass="nutchucnang" alignment="BOTTOM_CENTER">
+        <Button text="Thêm Mới" styleClass="bt-all" onAction="#btthemmoihangClick"/>
+        <Button text="Cập Nhật" styleClass="bt-all" fx:id="btcapnhat" onAction="#btcapnhathangClick"/>
+        <Button text="Xóa" styleClass="bt-all" fx:id="btxoa" onAction="#btxoaClick"/>
+        <Button text="Hủy" styleClass="bt-all" fx:id="bthuy" onAction="#bthuyClick"/>
+    </HBox>
+</VBox>

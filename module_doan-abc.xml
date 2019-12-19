@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_doan-abc" default="compile.module.doan-abc">
+  <dirname property="module.doan-abc.basedir" file="${ant.file.module_doan-abc}"/>
+  
+  <property name="module.jdk.home.doan-abc" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.doan-abc" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.doan-abc" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.doan-abc" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="doan-abc.output.dir" value="${module.doan-abc.basedir}/out/production/DoAn-ABC"/>
+  <property name="doan-abc.testoutput.dir" value="${module.doan-abc.basedir}/out/test/DoAn-ABC"/>
+  
+  <path id="doan-abc.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="doan-abc.module.production.classpath">
+    <path refid="${module.jdk.classpath.doan-abc}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="doan-abc.runtime.production.module.classpath">
+    <pathelement location="${doan-abc.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="doan-abc.module.classpath">
+    <path refid="${module.jdk.classpath.doan-abc}"/>
+    <pathelement location="${doan-abc.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  <path id="doan-abc.runtime.module.classpath">
+    <pathelement location="${doan-abc.testoutput.dir}"/>
+    <pathelement location="${doan-abc.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.doan-abc">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.doan-abc">
+    <patternset refid="excluded.from.module.doan-abc"/>
+  </patternset>
+  
+  <path id="doan-abc.module.sourcepath">
+    <dirset dir="${module.doan-abc.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.doan-abc" depends="compile.module.doan-abc.production,compile.module.doan-abc.tests" description="Compile module DoAn-ABC"/>
+  
+  <target name="compile.module.doan-abc.production" depends="register.custom.compilers" description="Compile module DoAn-ABC; production classes">
+    <mkdir dir="${doan-abc.output.dir}"/>
+    <javac2 destdir="${doan-abc.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.doan-abc}/javac">
+      <compilerarg line="${compiler.args.doan-abc}"/>
+      <bootclasspath refid="doan-abc.module.bootclasspath"/>
+      <classpath refid="doan-abc.module.production.classpath"/>
+      <src refid="doan-abc.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.doan-abc"/>
+    </javac2>
+    
+    <copy todir="${doan-abc.output.dir}">
+      <fileset dir="${module.doan-abc.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.doan-abc.tests" depends="register.custom.compilers,compile.module.doan-abc.production" description="compile module DoAn-ABC; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.doan-abc" description="cleanup module">
+    <delete dir="${doan-abc.output.dir}"/>
+    <delete dir="${doan-abc.testoutput.dir}"/>
+  </target>
+</project>

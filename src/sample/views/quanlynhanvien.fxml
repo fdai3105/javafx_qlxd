@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.QuanLyNhanVienController"
+      prefHeight="400.0" prefWidth="600.0" spacing="10" id="QLNV">
+    <HBox alignment="TOP_CENTER">
+        <Label text="QUẢN LÝ NHÂN VIÊN" styleClass="tieude"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Họ Tên:"/>
+        <TextField fx:id="tftennv" styleClass="tfAll"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Số Điện Thoại:"/>
+        <TextField fx:id="tfsdt" styleClass="tfAll"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Mật Khẩu:"/>
+        <TextField fx:id="tfmk" styleClass="tfAll"/>
+    </HBox>
+    <HBox spacing="5">
+        <Label text="Giới Tính:"/>
+        <ComboBox fx:id="cbgioitinh" promptText="Chọn Giới Tính">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Nam"/>
+                    <String fx:value="Nữ"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+    </HBox>
+    <HBox styleClass="nutchucnang" spacing="14" alignment="BOTTOM_CENTER">
+        <Button text="Thêm Mới" styleClass="bt-all" onAction="#btthemmoiClick"/>
+        <Button text="Cập Nhật" styleClass="bt-all" fx:id="btcapnhat" onAction="#btcapnhatClick"/>
+        <Button text="Xóa" styleClass="bt-all" fx:id="btxoa" onAction="#btxoaClick"/>
+        <Button text="Hủy" styleClass="bt-all" fx:id="bthuy" onAction="#bthuyClick"/>
+    </HBox>
+</VBox>

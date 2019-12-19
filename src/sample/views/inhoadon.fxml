@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.web.WebView?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sample.controllers.InHoaDon"
+            prefHeight="400.0" prefWidth="600.0" id="INHOADON">
+    <center><WebView fx:id="wvhoadon"/></center>
+    <bottom>
+        <HBox styleClass="nutchucnang" alignment="CENTER" spacing="5">
+            <Button text="In Hóa Đơn" onAction="#btinhoadonClick"/>
+            <Button text="Đóng" onAction="#btcloseClick"/>
+        </HBox>
+    </bottom>
+</BorderPane>

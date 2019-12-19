@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="sample.controllers.GioiThieuChuongTrinh"
+      prefHeight="400.0" prefWidth="600.0" spacing="20">
+    <HBox spacing="15">
+        <ImageView fitHeight="100" preserveRatio="true">
+            <Image url="@../medias/icon.png"/>
+        </ImageView>
+        <VBox spacing="15">
+            <Label text="Quản Lý Bán Hàng"/>
+            <Label text="Phiên bản: 1.0.0"/>
+            <Label text="Nhóm tác giả: Unknown"/>
+        </VBox>
+    </HBox>
+    <VBox alignment="CENTER" spacing="15">
+        <Label text="Bản quyền 2019 HueIC. Thông tin liên hệ: it@hueic.edu.vn"/>
+        <Button text="Đóng" onAction="#btcloseClick" fx:id="btclose"/>
+    </VBox>
+</VBox>
